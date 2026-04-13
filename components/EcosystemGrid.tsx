@@ -1,34 +1,15 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { ArrowUpRight, Code2, Globe, Shield, Wallet } from "lucide-react";
 
 export default function EcosystemGrid() {
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.15
-      }
-    }
-  };
-
-  const item = {
-    hidden: { opacity: 0, y: 40 },
-    show: { opacity: 1, y: 0, transition: { type: "spring" as const, stiffness: 200, damping: 20 } }
-  };
 
   return (
-    <motion.div 
-      variants={container}
-      initial="hidden"
-      animate="show"
-      className="grid grid-cols-1 md:grid-cols-3 gap-6"
+    <div 
+      className="grid grid-cols-1 md:grid-cols-3 gap-6 animate-fade-in"
     >
       {/* Quanta L1 Core - Large feature card (Spans 2 columns) */}
-      <motion.a
-        variants={item}
+      <a
         href="https://github.com/quantachain/"
         target="_blank"
         rel="noopener noreferrer"
@@ -54,11 +35,10 @@ export default function EcosystemGrid() {
             The bare-metal institutional settlement node. Written entirely in memory-safe Rust with adaptive PoW, delivering the highest degree of post-quantum security without smart contract vulnerabilities.
           </p>
         </div>
-      </motion.a>
+      </a>
 
       {/* QuaScan Explorer - Vertical Card */}
-      <motion.a
-        variants={item}
+      <a
         href="https://scan.quantachain.org"
         target="_blank"
         rel="noopener noreferrer"
@@ -81,11 +61,10 @@ export default function EcosystemGrid() {
                 <ArrowUpRight className="w-5 h-5 text-black group-hover:text-white transition-colors" />
              </div>
         </div>
-      </motion.a>
+      </a>
 
       {/* Quanta Wallet - Horizontal Card */}
-      <motion.a
-        variants={item}
+      <a
         href="https://chrome.google.com/webstore/detail/glofbcgdmodmaohealombcgoapdbdaff"
         target="_blank"
         rel="noopener noreferrer"
@@ -111,11 +90,10 @@ export default function EcosystemGrid() {
                 <ArrowUpRight className="w-4 h-4 text-black group-hover:text-white transition-colors" />
              </div>
         </div>
-      </motion.a>
+      </a>
 
       {/* Quanta SDK - Wide Card */}
-      <motion.div
-        variants={item}
+      <div
         className="group relative md:col-span-2 rounded-[2rem] border border-gray-200 p-8 md:p-12 bg-white hover:border-black transition-all shadow-sm hover:shadow-2xl hover:shadow-gray-200/50 flex flex-col md:flex-row md:items-center justify-between gap-8 h-full overflow-hidden"
       >
          <div className="absolute top-0 right-0 w-64 h-64 bg-gray-50 rounded-bl-full opacity-50 transition-transform duration-700 ease-out group-hover:scale-125" />
@@ -145,8 +123,8 @@ export default function EcosystemGrid() {
                 <ArrowUpRight className="w-4 h-4 text-gray-400 group-hover:text-black ms-2" />
               </a>
         </div>
-      </motion.div>
+      </div>
 
-    </motion.div>
+    </div>
   );
 }

@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { Mail, MapPin, ArrowUpRight, MessageSquare, Building2, Phone } from "lucide-react";
 
 export default function ContactSection() {
@@ -9,11 +8,8 @@ export default function ContactSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="mb-16 md:mb-20"
+        <div
+          className="mb-16 md:mb-20 animate-fade-in"
         >
           <span className="text-gray-400 font-bold tracking-widest uppercase text-xs mb-5 block">
             Get In Touch
@@ -27,17 +23,14 @@ export default function ContactSection() {
               Whether you are an institution, enterprise, or investor — we want to architect something great with you.
             </p>
           </div>
-        </motion.div>
+        </div>
 
         {/* Two-column layout */}
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-16">
 
           {/* Left: Contact Info */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="lg:col-span-2 flex flex-col gap-10"
+          <div
+            className="lg:col-span-2 flex flex-col gap-10 animate-fade-in"
           >
             <div>
               <h2 className="text-2xl font-extrabold text-black tracking-tight mb-6">Contact Points</h2>
@@ -81,14 +74,11 @@ export default function ContactSection() {
                 Our engineering team aims to respond to all institutional inquiries within <strong className="text-white">24–48 business hours</strong>. For urgent infrastructure matters, reference your inquiry in the message field.
               </p>
             </div>
-          </motion.div>
+          </div>
 
           {/* Right: Form */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="lg:col-span-3"
+          <div
+            className="lg:col-span-3 animate-fade-in"
           >
             <div className="bg-white border border-gray-200 rounded-[2rem] p-8 md:p-12 shadow-[0_8px_40px_rgba(0,0,0,0.06)]">
               <h2 className="text-2xl font-extrabold text-black tracking-tight mb-8">Send an Inquiry</h2>
@@ -158,7 +148,7 @@ export default function ContactSection() {
                 </button>
               </form>
             </div>
-          </motion.div>
+          </div>
 
         </div>
       </div>

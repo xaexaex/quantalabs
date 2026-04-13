@@ -61,13 +61,13 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-white border-b border-gray-100 shadow-xl absolute w-full left-0 top-full">
-          <div className="px-6 py-6 space-y-2 flex flex-col">
-            <Link href="/" onClick={() => setIsOpen(false)} className="block px-4 py-4 text-lg font-bold text-black border-b border-gray-50 hover:bg-gray-50 transition-colors">Home</Link>
-            <Link href="/services" onClick={() => setIsOpen(false)} className="block px-4 py-4 text-lg font-bold text-black border-b border-gray-50 hover:bg-gray-50 transition-colors">Services</Link>
-            <Link href="/ecosystem" onClick={() => setIsOpen(false)} className="block px-4 py-4 text-lg font-bold text-black border-b border-gray-50 hover:bg-gray-50 transition-colors">Ecosystem</Link>
-            <Link href="/research" onClick={() => setIsOpen(false)} className="block px-4 py-4 text-lg font-bold text-black border-b border-gray-50 hover:bg-gray-50 transition-colors">Research</Link>
-            <Link href="/contact" onClick={() => setIsOpen(false)} className="block px-4 py-4 text-lg font-black text-white bg-black rounded-lg text-center mt-4 uppercase tracking-wider">Contact Us</Link>
+        <div className="md:hidden fixed inset-0 z-40 bg-white pt-24 px-6 pb-6 overflow-y-auto w-full h-screen">
+          <div className="space-y-2 flex flex-col">
+            <Link href="/" onClick={() => setIsOpen(false)} className="block px-4 py-4 text-xl font-bold text-black border-b border-gray-50 hover:bg-gray-50 transition-colors">Home</Link>
+            <Link href="/services" onClick={() => setIsOpen(false)} className="block px-4 py-4 text-xl font-bold text-black border-b border-gray-50 hover:bg-gray-50 transition-colors">Services</Link>
+            <Link href="/ecosystem" onClick={() => setIsOpen(false)} className="block px-4 py-4 text-xl font-bold text-black border-b border-gray-50 hover:bg-gray-50 transition-colors">Ecosystem</Link>
+            <Link href="/research" onClick={() => setIsOpen(false)} className="block px-4 py-4 text-xl font-bold text-black border-b border-gray-50 hover:bg-gray-50 transition-colors">Research</Link>
+            <Link href="/contact" onClick={() => setIsOpen(false)} className="block px-4 py-5 text-lg font-black text-white bg-black rounded-xl text-center mt-6 uppercase tracking-wider shadow-lg shadow-black/10">Contact Us</Link>
           </div>
         </div>
       )}

@@ -2,50 +2,31 @@
 
 import Link from "next/link";
 import { ArrowUpRight, PlayCircle } from "lucide-react";
-import { motion } from "framer-motion";
 
 export default function Hero() {
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.15
-      }
-    }
-  };
-
-  const item = {
-    hidden: { opacity: 0, y: 30 },
-    show: { opacity: 1, y: 0, transition: { type: "spring" as const, stiffness: 200, damping: 20 } }
-  };
 
   return (
-    <section className="relative pt-16 pb-8 md:pt-20 md:pb-12 overflow-hidden bg-white text-black">
+    <section className="relative pt-24 pb-8 md:pt-28 md:pb-12 overflow-hidden bg-white text-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           
           {/* Left Column: Typography & CTAs */}
-          <motion.div 
-            variants={container}
-            initial="hidden"
-            animate="show"
-            className="flex flex-col justify-center max-w-2xl mt-4 md:mt-0"
+          <div 
+            className="flex flex-col justify-center max-w-2xl mt-4 md:mt-0 animate-fade-in"
           >
-            <motion.h1 
-              variants={item} 
+            <h1 
               className="text-[3.25rem] sm:text-6xl lg:text-7xl font-extrabold tracking-tighter text-black mb-6 md:mb-8 leading-tight md:leading-[1.05]"
             >
-              The Protocol <br className="hidden md:block" />
-              <span className="text-gray-400">Standard for</span> Web3.
-            </motion.h1>
+              Enterprise AI & <br className="hidden md:block" />
+              <span className="text-gray-400">PQC Blockchain</span> Solutions.
+            </h1>
 
-            <motion.p variants={item} className="text-lg md:text-xl text-gray-600 mb-10 leading-relaxed font-medium max-w-xl">
+            <p className="text-lg md:text-xl text-gray-600 mb-10 leading-relaxed font-medium max-w-xl">
               We build core infrastructure at the frontier of AI and Post-Quantum Cryptography, natively integrated at the blockchain consensus layer.
-            </motion.p>
+            </p>
 
 
-            <motion.div variants={item} className="flex flex-col sm:flex-row items-stretch sm:items-center space-y-4 sm:space-y-0 sm:space-x-4 w-full sm:w-auto">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center space-y-4 sm:space-y-0 sm:space-x-4 w-full sm:w-auto">
               <Link 
                 href="/services" 
                 className="group flex items-center justify-center space-x-2 px-8 py-4 bg-black text-white rounded-full font-bold hover:bg-gray-800 transition-all duration-300 w-full sm:w-auto hover:shadow-xl"
@@ -61,15 +42,12 @@ export default function Hero() {
                 <PlayCircle className="w-6 h-6 text-gray-400 group-hover:text-black transition-colors" />
                 <span>Contact Partnerships</span>
               </Link>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
 
           {/* Right Column: Premium Abstract Shape (Static) */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
-            className="relative lg:h-[600px] w-full flex items-center justify-center lg:justify-end mt-12 lg:mt-0"
+          <div 
+            className="relative lg:h-[600px] w-full flex items-center justify-center lg:justify-end mt-12 lg:mt-0 animate-fade-in"
           >
              <div className="relative w-full max-w-lg aspect-square lg:aspect-auto lg:h-[90%] flex items-center justify-center">
                 <svg viewBox="0 0 600 600" className="w-full h-full overflow-visible">
@@ -189,7 +167,7 @@ export default function Hero() {
                   <text x="300" y="394" textAnchor="middle" className="font-mono text-[7px] fill-gray-400 tracking-widest font-bold">NPU COMPUTE CACHE</text>
                 </svg>
              </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

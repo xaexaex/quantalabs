@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { Terminal, Copy, CheckCircle2 } from "lucide-react";
 import { useState } from "react";
 import Link from "next/link";
@@ -42,12 +41,8 @@ fn main() -> Result<(), CoreError> {
         <div className="flex flex-col lg:flex-row items-center gap-16">
           
           {/* Text Content */}
-          <motion.div 
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="w-full lg:w-5/12"
+          <div 
+            className="w-full lg:w-5/12 animate-fade-in"
           >
             <span className="text-gray-400 font-bold tracking-widest uppercase text-xs mb-6 block">
               Core Protocol R&D
@@ -67,15 +62,11 @@ fn main() -> Result<(), CoreError> {
                 Read Research
               </Link>
             </div>
-          </motion.div>
+          </div>
 
           {/* Code Terminal */}
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="w-full lg:w-7/12"
+          <div 
+            className="w-full lg:w-7/12 animate-fade-in"
           >
             <div className="bg-[#0A0A0A] border border-gray-800 rounded-2xl overflow-hidden shadow-2xl">
               {/* Terminal Header */}
@@ -95,8 +86,8 @@ fn main() -> Result<(), CoreError> {
               </div>
               
               {/* Terminal Body */}
-              <div className="p-6 overflow-x-auto">
-                <pre className="text-sm font-mono leading-relaxed">
+              <div className="p-4 sm:p-6 overflow-x-auto">
+                <pre className="text-[10px] sm:text-xs md:text-sm font-mono leading-relaxed">
                   <code className="text-gray-300">
                     <span className="text-gray-500">// Bootstrap a Post-Quantum Autonomous L2 Node</span><br />
                     <span className="text-blue-400">use</span> quanta_core::consensus::PqcConsensus;<br />
@@ -122,7 +113,7 @@ fn main() -> Result<(), CoreError> {
                 </pre>
               </div>
             </div>
-          </motion.div>
+          </div>
 
         </div>
       </div>

@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { ArrowRight, ArrowUpRight, BookOpen } from "lucide-react";
 import Link from "next/link";
 
@@ -34,12 +33,8 @@ export default function ResearchTeaser() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6"
+        <div
+          className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6 animate-fade-in"
         >
           <div>
             <div className="flex items-center space-x-3 mb-5">
@@ -57,7 +52,7 @@ export default function ResearchTeaser() {
             Read All Whitepapers
             <ArrowRight className="w-5 h-5 ml-2" />
           </Link>
-        </motion.div>
+        </div>
 
         {/* Subheading */}
         <p className="text-lg text-gray-500 font-medium mb-12 leading-relaxed max-w-2xl">
@@ -67,16 +62,12 @@ export default function ResearchTeaser() {
         {/* Papers Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {papers.map((paper, i) => (
-            <motion.a
+            <a
               key={i}
               href={paper.href}
               target="_blank"
               rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group block bg-gray-50 border border-gray-100 rounded-[1.5rem] p-8 hover:bg-white hover:border-black hover:shadow-[0_8px_40px_rgba(0,0,0,0.08)] transition-all duration-300 relative overflow-hidden"
+              className="group block bg-gray-50 border border-gray-100 rounded-[1.5rem] p-8 hover:bg-white hover:border-black hover:shadow-[0_8px_40px_rgba(0,0,0,0.08)] transition-all duration-300 relative overflow-hidden animate-fade-in"
             >
               {/* Number watermark */}
               <div className="absolute top-4 right-5 text-[4rem] font-extrabold text-gray-100 leading-none select-none pointer-events-none group-hover:text-gray-200 transition-colors">
@@ -98,7 +89,7 @@ export default function ResearchTeaser() {
                 <span className="text-[10px] font-mono text-gray-300">DOI: {paper.doi}</span>
                 <span className="text-xs font-bold text-gray-400">{paper.date}</span>
               </div>
-            </motion.a>
+            </a>
           ))}
         </div>
 

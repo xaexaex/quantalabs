@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { Download, Shield, Key, Fingerprint, Lock, ShieldCheck } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -25,12 +24,8 @@ export default function WalletShowcase() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
           {/* Left Column: Copy */}
-          <motion.div 
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="flex flex-col"
+          <div 
+            className="flex flex-col animate-fade-in"
           >
             <div className="flex items-center space-x-3 mb-6">
               <ShieldCheck className="w-5 h-5 text-gray-500" />
@@ -75,15 +70,11 @@ export default function WalletShowcase() {
                  )
                })}
             </div>
-          </motion.div>
+          </div>
 
           {/* Right Column: Visual Showcase */}
-          <motion.div 
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="relative lg:h-[700px] w-full flex items-center justify-center"
+          <div 
+            className="relative lg:h-[700px] w-full flex items-center justify-center animate-fade-in"
           >
              <div className="relative w-full max-w-md bg-white rounded-[2.5rem] border border-gray-200 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] p-6 aspect-[9/16] overflow-hidden">
                 {/* Simulated Chrome Extension UI */}
@@ -139,7 +130,7 @@ export default function WalletShowcase() {
                    </div>
                 </div>
              </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

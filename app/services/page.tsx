@@ -1,26 +1,16 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { Blocks, BrainCircuit, ShieldCheck, Code2, ArrowUpRight, ArrowRight, Network, CheckCircle2, Terminal } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
 export default function ServicesPage() {
-  const container = {
-    hidden: { opacity: 0 },
-    show: { opacity: 1, transition: { staggerChildren: 0.15 } }
-  };
-
-  const item = {
-    hidden: { opacity: 0, y: 40 },
-    show: { opacity: 1, y: 0, transition: { type: "spring" as const, stiffness: 200, damping: 20 } }
-  };
 
   return (
     <div className="pt-24 min-h-screen pb-32 bg-white selection:bg-gray-200">
       {/* Hero Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 text-center pt-12 md:pt-20">
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+        <div className="animate-fade-in">
           <span className="text-gray-400 font-bold tracking-widest uppercase text-xs mb-6 block">
             Capabilities & R&D
           </span>
@@ -31,14 +21,14 @@ export default function ServicesPage() {
           <p className="text-lg md:text-xl text-gray-500 font-medium leading-relaxed max-w-2xl mx-auto">
             From bespoke sovereign rollups to full-scale post-quantum algorithmic migrations, our engineering team architects the next generation of institutional networks.
           </p>
-        </motion.div>
+        </div>
       </section>
 
       {/* Deep Dive 1: L2 AppChains */}
       <section className="py-24 border-y border-gray-100 bg-gray-50/50 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-16 items-center">
-            <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="w-full lg:w-1/2">
+            <div className="w-full lg:w-1/2 animate-fade-in">
               <div className="bg-white border border-gray-200 w-16 h-16 rounded-2xl flex items-center justify-center mb-8 shadow-sm">
                  <Blocks className="w-8 h-8 text-black" />
               </div>
@@ -53,9 +43,9 @@ export default function ServicesPage() {
                   </li>
                 ))}
               </ul>
-            </motion.div>
+            </div>
             
-            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="w-full lg:w-1/2">
+            <div className="w-full lg:w-1/2 animate-fade-in">
                <div className="bg-white rounded-[2rem] border border-gray-200 shadow-xl p-8 aspect-square md:aspect-auto md:h-[450px] flex flex-col justify-between relative overflow-hidden group">
                   <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gray-100 rounded-full blur-[100px] -mr-40 -mt-40 transition-transform group-hover:scale-110"></div>
                   
@@ -82,7 +72,7 @@ export default function ServicesPage() {
                      </div>
                   </div>
                </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -92,7 +82,7 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-16 items-center">
             
-            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="w-full lg:w-1/2 order-2 lg:order-1">
+            <div className="w-full lg:w-1/2 order-2 lg:order-1 animate-fade-in">
                <div className="bg-[#0A0A0A] rounded-[2rem] border border-gray-800 shadow-2xl overflow-hidden h-[450px] flex flex-col">
                   {/* Terminal Header */}
                   <div className="bg-[#111] border-b border-gray-800 p-4 flex items-center justify-between">
@@ -118,9 +108,9 @@ export default function ServicesPage() {
                      <div className="mt-4"><span className="text-green-400">root@quanta:~$</span> <span className="animate-pulse">_</span></div>
                   </div>
                </div>
-            </motion.div>
+            </div>
 
-            <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="w-full lg:w-1/2 order-1 lg:order-2">
+            <div className="w-full lg:w-1/2 order-1 lg:order-2 animate-fade-in">
               <div className="bg-gray-50 border border-gray-100 w-16 h-16 rounded-2xl flex items-center justify-center mb-8 shadow-sm">
                  <ShieldCheck className="w-8 h-8 text-black" />
               </div>
@@ -135,7 +125,7 @@ export default function ServicesPage() {
                   </li>
                 ))}
               </ul>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -147,7 +137,7 @@ export default function ServicesPage() {
          </div>
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex flex-col lg:flex-row gap-16 items-center">
-            <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="w-full lg:w-1/2">
+            <div className="w-full lg:w-1/2 animate-fade-in">
               <div className="bg-white/10 border border-gray-800 w-16 h-16 rounded-2xl flex items-center justify-center mb-8">
                  <BrainCircuit className="w-8 h-8 text-white" />
               </div>
@@ -162,9 +152,9 @@ export default function ServicesPage() {
                   </div>
                 ))}
               </div>
-            </motion.div>
+            </div>
             
-            <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="w-full lg:w-1/2">
+            <div className="w-full lg:w-1/2 animate-fade-in">
                <div className="bg-[#050505] rounded-[2rem] border border-gray-800 shadow-2xl p-8 h-[450px] relative overflow-hidden font-mono text-sm flex flex-col justify-end">
                   <div className="opacity-40 mb-auto">
                      <span className="text-gray-600 block">Initializing Agent Sequence...</span>
@@ -187,7 +177,7 @@ export default function ServicesPage() {
                      </div>
                   </div>
                </div>
-            </motion.div>
+            </div>
 
           </div>
         </div>
@@ -198,22 +188,22 @@ export default function ServicesPage() {
          <div className="mb-12 text-center">
             <h3 className="text-3xl font-extrabold text-black tracking-tight">Additional Enterprise Services</h3>
          </div>
-        <motion.div variants={container} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-100px" }} className="grid grid-cols-1 md:grid-cols-2 gap-8">
-           <motion.div variants={item} className="p-10 bg-white border border-gray-200 rounded-[2rem] shadow-sm hover:shadow-xl hover:border-black transition-all group">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 animate-fade-in">
+           <div className="p-10 bg-white border border-gray-200 rounded-[2rem] shadow-sm hover:shadow-xl hover:border-black transition-all group">
              <Code2 className="w-8 h-8 text-black mb-6" />
              <h4 className="text-2xl font-extrabold text-black mb-4 tracking-tight">WASM Cryptography</h4>
              <p className="text-gray-500 font-medium leading-relaxed">
                Custom web and mobile browser integrations utilizing our highly-optimized, proprietary Rust-to-WASM post-quantum cryptographic libraries for end-user wallets.
              </p>
-           </motion.div>
-           <motion.div variants={item} className="p-10 bg-white border border-gray-200 rounded-[2rem] shadow-sm hover:shadow-xl hover:border-black transition-all group">
+           </div>
+           <div className="p-10 bg-white border border-gray-200 rounded-[2rem] shadow-sm hover:shadow-xl hover:border-black transition-all group">
              <Network className="w-8 h-8 text-black mb-6" />
              <h4 className="text-2xl font-extrabold text-black mb-4 tracking-tight">Validation & RPC Nodes</h4>
              <p className="text-gray-500 font-medium leading-relaxed">
                Enterprise-grade dedicated RPC infrastructure and Bare-Metal highly available validator active/passive clusters supporting Quantachain and its localized L2 networks.
              </p>
-           </motion.div>
-        </motion.div>
+           </div>
+        </div>
       </section>
 
       {/* Final CTA */}

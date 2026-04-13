@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { Blocks, BrainCircuit, ShieldCheck, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
@@ -28,12 +27,8 @@ export default function ServicesPreview() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-12">
-           <motion.div 
-             initial={{ opacity: 0, x: -20 }}
-             whileInView={{ opacity: 1, x: 0 }}
-             viewport={{ once: true }}
-             transition={{ duration: 0.6 }}
-             className="max-w-xl"
+           <div 
+             className="max-w-xl animate-fade-in"
            >
               <h2 className="text-4xl md:text-5xl font-extrabold text-black tracking-tighter mb-6">
                 Deep-Tech Solutions <br className="hidden md:block"/> for the Vanguard.
@@ -44,14 +39,10 @@ export default function ServicesPreview() {
               <Link href="/services" className="inline-flex items-center text-sm font-bold text-black border-b-[3px] border-black pb-1 hover:text-gray-500 hover:border-gray-500 transition-colors uppercase tracking-widest">
                  Explore All Services <ArrowRight className="w-5 h-5 ml-2" />
               </Link>
-           </motion.div>
+           </div>
 
-           <motion.div 
-             initial={{ opacity: 0, scale: 0.95 }}
-             whileInView={{ opacity: 1, scale: 1 }}
-             viewport={{ once: true }}
-             transition={{ duration: 0.8 }}
-             className="grid grid-cols-1 sm:grid-cols-3 gap-6 w-full lg:w-auto"
+           <div 
+             className="grid grid-cols-1 sm:grid-cols-3 gap-6 w-full lg:w-auto animate-fade-in"
            >
              {teasers.map((service, index) => {
                const Icon = service.icon;
@@ -64,7 +55,7 @@ export default function ServicesPreview() {
                  <p className="text-sm text-gray-500 font-medium leading-relaxed">{service.desc}</p>
                </div>
              )})}
-           </motion.div>
+           </div>
         </div>
 
       </div>

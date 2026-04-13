@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+
 
 export default function NetworkMetrics() {
   const metrics = [
@@ -21,13 +21,9 @@ export default function NetworkMetrics() {
           <div className="relative z-10 w-full px-6 lg:px-12">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
               {metrics.map((metric, index) => (
-                <motion.div 
+                <div 
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
-                  className="flex flex-col items-center justify-center text-center group cursor-default"
+                  className="flex flex-col items-center justify-center text-center group cursor-default animate-fade-in"
                 >
                   <div className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tighter mb-2 group-hover:scale-105 transition-transform duration-300">
                     {metric.value}
@@ -35,7 +31,7 @@ export default function NetworkMetrics() {
                   <div className="text-gray-400 font-bold tracking-widest text-[10px] sm:text-xs uppercase">
                     {metric.label}
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
