@@ -39,10 +39,10 @@ export default function Navbar() {
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-10">
             <Link href="/" className="text-gray-500 hover:text-black transition-colors text-sm font-bold">Home</Link>
-            <Link href="#services" className="text-gray-500 hover:text-black transition-colors text-sm font-bold">Services</Link>
-            <Link href="#ecosystem" className="text-gray-500 hover:text-black transition-colors text-sm font-bold">Ecosystem</Link>
-            <Link href="#careers" className="text-gray-500 hover:text-black transition-colors text-sm font-bold">Careers</Link>
-            <Link href="#contact" className="bg-black text-white px-6 py-2.5 rounded-full font-bold text-sm hover:bg-gray-800 transition-all">
+            <Link href="/services" className="text-gray-500 hover:text-black transition-colors text-sm font-bold">Services</Link>
+            <Link href="/ecosystem" className="text-gray-500 hover:text-black transition-colors text-sm font-bold">Ecosystem</Link>
+            <Link href="/research" className="text-gray-500 hover:text-black transition-colors text-sm font-bold">Research</Link>
+            <Link href="/contact" className="bg-black text-white px-6 py-2.5 rounded-full font-bold text-sm hover:bg-gray-800 transition-all">
               Contact Us
             </Link>
           </div>
@@ -64,10 +64,10 @@ export default function Navbar() {
         <div className="md:hidden bg-white border-b border-gray-100 shadow-xl absolute w-full left-0 top-full">
           <div className="px-6 py-6 space-y-2 flex flex-col">
             <Link href="/" onClick={() => setIsOpen(false)} className="block px-4 py-4 text-lg font-bold text-black border-b border-gray-50 hover:bg-gray-50 transition-colors">Home</Link>
-            <Link href="#services" onClick={() => setIsOpen(false)} className="block px-4 py-4 text-lg font-bold text-black border-b border-gray-50 hover:bg-gray-50 transition-colors">Services</Link>
-            <Link href="#ecosystem" onClick={() => setIsOpen(false)} className="block px-4 py-4 text-lg font-bold text-black border-b border-gray-50 hover:bg-gray-50 transition-colors">Ecosystem</Link>
-            <Link href="#careers" onClick={() => setIsOpen(false)} className="block px-4 py-4 text-lg font-bold text-black border-b border-gray-50 hover:bg-gray-50 transition-colors">Careers</Link>
-            <Link href="#contact" onClick={() => setIsOpen(false)} className="block px-4 py-4 text-lg font-black text-white bg-black rounded-lg text-center mt-4 uppercase tracking-wider">Contact Us</Link>
+            <Link href="/services" onClick={() => setIsOpen(false)} className="block px-4 py-4 text-lg font-bold text-black border-b border-gray-50 hover:bg-gray-50 transition-colors">Services</Link>
+            <Link href="/ecosystem" onClick={() => setIsOpen(false)} className="block px-4 py-4 text-lg font-bold text-black border-b border-gray-50 hover:bg-gray-50 transition-colors">Ecosystem</Link>
+            <Link href="/research" onClick={() => setIsOpen(false)} className="block px-4 py-4 text-lg font-bold text-black border-b border-gray-50 hover:bg-gray-50 transition-colors">Research</Link>
+            <Link href="/contact" onClick={() => setIsOpen(false)} className="block px-4 py-4 text-lg font-black text-white bg-black rounded-lg text-center mt-4 uppercase tracking-wider">Contact Us</Link>
           </div>
         </div>
       )}

@@ -1,78 +1,72 @@
-import { Blocks, BrainCircuit, ShieldCheck, Cpu, Code2 } from "lucide-react";
+"use client";
+
+import { motion } from "framer-motion";
+import { Blocks, BrainCircuit, ShieldCheck, ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 export default function ServicesPreview() {
-  const services = [
+  const teasers = [
     {
       icon: Blocks,
-      title: "Custom Blockchains",
-      description: "Tailor-made Layer 1 and Layer 2 decentralized networks built to scale with your institution's specific demands.",
-    },
-    {
-      icon: Code2,
-      title: "Core Development",
-      description: "Smart contract development, dApps, wallets, and ecosystem tools engineered for peak performance and security.",
-    },
-    {
-      icon: BrainCircuit,
-      title: "Blockchain with AI",
-      description: "Integrating intelligent agents and decentralized ML models on-chain for the next generation of smart applications.",
+      title: "L2 AppChains",
+      desc: "Custom Layer 2 rollups on the Quanta base layer.",
     },
     {
       icon: ShieldCheck,
       title: "PQC Migrations",
-      description: "Future-proofing your network with our specialized Post-Quantum Cryptography transition algorithms.",
+      desc: "NIST-standardized Post-Quantum transition services.",
     },
     {
-      icon: Cpu,
-      title: "Enterprise Solutions",
-      description: "Private consortium networks and permissioned solutions designed for regulatory compliance and high throughput.",
+      icon: BrainCircuit,
+      title: "AI Networks",
+      desc: "Decentralized autonomous agent architectures.",
     }
   ];
 
   return (
-    <section id="services" className="py-24 md:py-32 bg-white relative pb-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section className="py-20 bg-gray-50 border-y border-gray-100">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Clean, Massive Header Centered */}
-        <div className="text-center max-w-4xl mx-auto mb-20 lg:mb-32">
-           <span className="text-gray-400 font-bold tracking-widest uppercase text-xs mb-8 block">
-              Capabilities
-           </span>
-           <h2 className="text-5xl md:text-7xl font-extrabold text-black tracking-tighter leading-[1.05]">
-              Engineering the<br/>Decentralized Future.
-           </h2>
-        </div>
-
-        {/* Minimalist Swiss-Style Typographical Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-16 gap-y-24 mb-24">
-          {services.map((service, index) => (
-            <div key={index} className="flex flex-col group cursor-default">
-              {/* Massive Abstract Number */}
-              <div className="text-[6rem] leading-none font-thin text-gray-100 mb-6 font-mono tracking-tighter group-hover:text-black transition-colors duration-500">
-                0{index + 1}
-              </div>
-              
-              <h3 className="text-2xl font-extrabold text-black mb-4 tracking-tight flex items-center space-x-3">
-                 <service.icon className="w-6 h-6 text-black" />
-                 <span>{service.title}</span>
-              </h3>
-              
-              <p className="text-lg text-gray-600 leading-relaxed font-medium">
-                {service.description}
+        <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-12">
+           <motion.div 
+             initial={{ opacity: 0, x: -20 }}
+             whileInView={{ opacity: 1, x: 0 }}
+             viewport={{ once: true }}
+             transition={{ duration: 0.6 }}
+             className="max-w-xl"
+           >
+              <h2 className="text-4xl md:text-5xl font-extrabold text-black tracking-tighter mb-6">
+                Deep-Tech Solutions <br className="hidden md:block"/> for the Vanguard.
+              </h2>
+              <p className="text-lg text-gray-500 font-medium mb-8">
+                We don't build generic smart contracts. We architect the sovereign infrastructure required by institutions entering the quantum era.
               </p>
-            </div>
-          ))}
+              <Link href="/services" className="inline-flex items-center text-sm font-bold text-black border-b-[3px] border-black pb-1 hover:text-gray-500 hover:border-gray-500 transition-colors uppercase tracking-widest">
+                 Explore All Services <ArrowRight className="w-5 h-5 ml-2" />
+              </Link>
+           </motion.div>
 
-          {/* Inline CTA block matching the grid layout */}
-          <div className="flex flex-col justify-center p-8 bg-gray-50 rounded-3xl h-full border border-gray-100 hover:border-black transition-colors">
-            <h3 className="text-2xl font-extrabold text-black mb-4">Have a custom requirement?</h3>
-            <p className="text-lg text-gray-500 mb-8 font-medium">Our engineering team is ready to architect your vision.</p>
-            <button className="bg-black text-white px-8 py-4 rounded-xl font-bold hover:bg-gray-800 transition-colors shadow-lg self-start">
-              Talk to our Engineers
-            </button>
-          </div>
+           <motion.div 
+             initial={{ opacity: 0, scale: 0.95 }}
+             whileInView={{ opacity: 1, scale: 1 }}
+             viewport={{ once: true }}
+             transition={{ duration: 0.8 }}
+             className="grid grid-cols-1 sm:grid-cols-3 gap-6 w-full lg:w-auto"
+           >
+             {teasers.map((service, index) => {
+               const Icon = service.icon;
+               return (
+               <div key={index} className="bg-white border border-gray-200 rounded-3xl p-8 hover:border-black transition-all shadow-sm hover:shadow-xl w-full lg:w-[240px]">
+                 <div className="bg-gray-100 w-12 h-12 rounded-xl flex items-center justify-center mb-6">
+                   <Icon className="w-6 h-6 text-black" />
+                 </div>
+                 <h3 className="font-extrabold text-black text-xl mb-3 tracking-tight">{service.title}</h3>
+                 <p className="text-sm text-gray-500 font-medium leading-relaxed">{service.desc}</p>
+               </div>
+             )})}
+           </motion.div>
         </div>
-        
+
       </div>
     </section>
   );

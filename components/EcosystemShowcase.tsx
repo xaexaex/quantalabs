@@ -39,6 +39,16 @@ export default async function EcosystemShowcase() {
                 <div className="text-xs text-gray-500 font-bold uppercase tracking-widest">Blocks</div>
               </div>
             </div>
+
+            <div className="mt-8">
+              <a 
+                href="/ecosystem" 
+                className="inline-flex items-center justify-center px-8 py-3.5 border border-gray-200 shadow-sm bg-white text-black font-bold text-sm uppercase tracking-wider rounded-xl hover:bg-gray-50 hover:border-black transition-all group"
+              >
+                <span>Explore Ecosystem Product Suite</span>
+                <ArrowUpRight className="ml-2 w-4 h-4 text-gray-400 group-hover:text-black transition-colors" />
+              </a>
+            </div>
           </div>
 
           {/* Right: QSCAN live feed */}

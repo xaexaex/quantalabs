@@ -37,21 +37,22 @@ export default function Footer() {
           <div>
             <h3 className="font-bold text-black mb-4">Services</h3>
             <ul className="space-y-3">
-              <li><Link href="#services" className="text-gray-500 hover:text-black text-sm font-medium transition-colors">Custom Blockchains</Link></li>
-              <li><Link href="#services" className="text-gray-500 hover:text-black text-sm font-medium transition-colors">Blockchain Development</Link></li>
-              <li><Link href="#services" className="text-gray-500 hover:text-black text-sm font-medium transition-colors">Blockchain with AI</Link></li>
-              <li><Link href="#services" className="text-gray-500 hover:text-black text-sm font-medium transition-colors">Enterprise Solutions</Link></li>
-              <li><Link href="#services" className="text-gray-500 hover:text-black text-sm font-medium transition-colors">Exclusive PQC Migrations</Link></li>
+              <li><Link href="/services" className="text-gray-500 hover:text-black text-sm font-medium transition-colors">Custom Blockchains</Link></li>
+              <li><Link href="/services" className="text-gray-500 hover:text-black text-sm font-medium transition-colors">Blockchain Development</Link></li>
+              <li><Link href="/services" className="text-gray-500 hover:text-black text-sm font-medium transition-colors">Blockchain with AI</Link></li>
+              <li><Link href="/services" className="text-gray-500 hover:text-black text-sm font-medium transition-colors">Enterprise Solutions</Link></li>
+              <li><Link href="/services" className="text-gray-500 hover:text-black text-sm font-medium transition-colors">Exclusive PQC Migrations</Link></li>
             </ul>
           </div>
 
           <div>
             <h3 className="font-bold text-black mb-4">Company</h3>
             <ul className="space-y-3">
-              <li><Link href="#ecosystem" className="text-gray-500 hover:text-black text-sm font-medium transition-colors">Quantachain Ecosystem</Link></li>
-              <li><Link href="#careers" className="text-gray-500 hover:text-black text-sm font-medium transition-colors">Careers</Link></li>
-              <li><Link href="#contact" className="text-gray-500 hover:text-black text-sm font-medium transition-colors">Investor Relations</Link></li>
-              <li><Link href="#contact" className="text-gray-500 hover:text-black text-sm font-medium transition-colors">Contact Us</Link></li>
+              <li><Link href="/ecosystem" className="text-gray-500 hover:text-black text-sm font-medium transition-colors">Quantachain Ecosystem</Link></li>
+              <li><Link href="/research" className="text-gray-500 hover:text-black text-sm font-medium transition-colors">Academic Research</Link></li>
+              <li><Link href="/careers" className="text-gray-500 hover:text-black text-sm font-medium transition-colors">Careers</Link></li>
+              <li><Link href="/contact" className="text-gray-500 hover:text-black text-sm font-medium transition-colors">Investor Relations</Link></li>
+              <li><Link href="/contact" className="text-gray-500 hover:text-black text-sm font-medium transition-colors">Contact Us</Link></li>
             </ul>
           </div>
         </div>
