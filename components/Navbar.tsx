@@ -28,7 +28,6 @@ export default function Navbar() {
                 alt="Quantalabs Logo" 
                 width={32} 
                 height={32} 
-                className="brightness-0" 
               />
               <span className="font-extrabold text-2xl tracking-tighter text-black">
                 Quantalabs<span className="text-gray-300">.</span>

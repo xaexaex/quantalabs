@@ -14,7 +14,6 @@ export default function Footer() {
                 alt="Quantalabs Logo" 
                 width={28} 
                 height={28} 
-                className="brightness-0" 
               />
               <span className="font-extrabold text-xl tracking-tight text-black">Quantalabs<span className="text-gray-300">.</span></span>
             </Link>
