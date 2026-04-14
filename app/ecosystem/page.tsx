@@ -3,9 +3,35 @@ import EcosystemShowcase from "@/components/EcosystemShowcase";
 import EcosystemGrid from "@/components/EcosystemGrid";
 import { ArrowUpRight } from "lucide-react";
 
+const ogImage = "/seo/image.png";
+
 export const metadata: Metadata = {
-  title: "Ecosystem & Products | Quantalabs",
-  description: "Explore the post-quantum product suite: Explorer, Wallet, WASM SDK, and L1 Node.",
+  title: "Quantachain Ecosystem & Product Suite",
+  description:
+    "Explore Quantalabs' post-quantum product suite: the Quantachain L1 node, WASM SDK with Falcon-512 bindings, Block Explorer, and the Quanta wallet Chrome extension.",
+  alternates: {
+    canonical: "https://quantalabs.cc/ecosystem",
+  },
+  openGraph: {
+    title: "Quantachain Ecosystem & Product Suite | Quantalabs",
+    description:
+      "The post-quantum product suite built by Quantalabs — Quantachain L1, WASM SDK, block explorer, and the world's first post-quantum Chrome wallet.",
+    url: "https://quantalabs.cc/ecosystem",
+    images: [
+      {
+        url: ogImage,
+        width: 1200,
+        height: 630,
+        alt: "Quantachain Ecosystem — Post-Quantum Product Suite by Quantalabs",
+      },
+    ],
+  },
+  twitter: {
+    title: "Quantachain Ecosystem & Product Suite | Quantalabs",
+    description:
+      "Post-quantum L1 node, WASM SDK, block explorer, and Chrome wallet — all built by Quantalabs.",
+    images: [ogImage],
+  },
 };
 
 export default function EcosystemPage() {

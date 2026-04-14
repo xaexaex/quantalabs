@@ -1,9 +1,35 @@
 import type { Metadata } from "next";
 import { ArrowUpRight, BookOpen, FileText, ExternalLink, Quote } from "lucide-react";
 
+const ogImage = "/seo/image.png";
+
 export const metadata: Metadata = {
-  title: "Research & Publications | Quantalabs",
-  description: "Academic papers, preprints, and articles on post-quantum cryptography, Falcon-512, and the Quantachain architecture.",
+  title: "Research & Publications — Post-Quantum Cryptography",
+  description:
+    "Academic papers, preprints, and articles on post-quantum cryptography, Falcon-512, lattice-based cryptography, and the Quantachain distributed ledger architecture. Published on Zenodo.",
+  alternates: {
+    canonical: "https://quantalabs.cc/research",
+  },
+  openGraph: {
+    title: "Research & Publications — Post-Quantum Cryptography | Quantalabs",
+    description:
+      "Peer-reviewed papers on Falcon-512 blockchain consensus, Learning with Correlated Errors (LCE), and quantum temporal order. Quantalabs research at the frontier of PQC.",
+    url: "https://quantalabs.cc/research",
+    images: [
+      {
+        url: ogImage,
+        width: 1200,
+        height: 630,
+        alt: "Quantalabs Research — Post-Quantum Cryptography & Publications",
+      },
+    ],
+  },
+  twitter: {
+    title: "Research & Publications — Post-Quantum Cryptography | Quantalabs",
+    description:
+      "Academic papers on Falcon-512, LCE hardness, and quantum temporal ordering from the Quantalabs research team.",
+    images: [ogImage],
+  },
 };
 
 const papers = [
@@ -196,7 +222,7 @@ export default function ResearchPage() {
       {/* Developer Portal CTA */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <a
-          href="https://quantachain.org/docs"
+          href="https://quantachain.gitbook.io/quantachain-docs"
           target="_blank"
           rel="noopener noreferrer"
           className="group block relative overflow-hidden rounded-[2.5rem] bg-black p-10 md:p-14 border border-gray-900 hover:border-gray-700 transition-all"

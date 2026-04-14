@@ -1,8 +1,37 @@
-"use client";
-
+import type { Metadata } from "next";
 import { Blocks, BrainCircuit, ShieldCheck, Code2, ArrowUpRight, ArrowRight, Network, CheckCircle2, Terminal } from "lucide-react";
 import Link from "next/link";
-import React from "react";
+
+const ogImage = "/seo/image.png";
+
+export const metadata: Metadata = {
+  title: "Services — L2 AppChains, PQC Migrations & AI Agents",
+  description:
+    "Quantalabs engineers sovereign L2 rollups, executes mainnet post-quantum cryptography migrations (Falcon-512, Kyber KEM), and deploys autonomous AI agent frameworks for institutional blockchain networks.",
+  alternates: {
+    canonical: "https://quantalabs.cc/services",
+  },
+  openGraph: {
+    title: "Services — L2 AppChains, PQC Migrations & AI Agents | Quantalabs",
+    description:
+      "Sovereign L2 AppChains, mainnet PQC migrations (Falcon-512 / Kyber KEM), and autonomous on-chain AI agents. Enterprise-grade protocol engineering by Quantalabs.",
+    url: "https://quantalabs.cc/services",
+    images: [
+      {
+        url: ogImage,
+        width: 1200,
+        height: 630,
+        alt: "Quantalabs Services — Blockchain, PQC & AI Engineering",
+      },
+    ],
+  },
+  twitter: {
+    title: "Services — L2 AppChains, PQC Migrations & AI Agents | Quantalabs",
+    description:
+      "Sovereign L2 rollups, mainnet post-quantum migrations, and AI agent frameworks. By Quantalabs.",
+    images: [ogImage],
+  },
+};
 
 export default function ServicesPage() {
 
@@ -25,7 +54,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Deep Dive 1: L2 AppChains */}
-      <section className="py-24 border-y border-gray-100 bg-gray-50/50 overflow-hidden">
+      <section id="appchains" className="py-24 border-y border-gray-100 bg-gray-50/50 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-16 items-center">
             <div className="w-full lg:w-1/2 animate-fade-in">
@@ -78,7 +107,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Deep Dive 2: PQC Migrations */}
-      <section className="py-24 border-y border-gray-100 overflow-hidden">
+      <section id="pqc-migrations" className="py-24 border-y border-gray-100 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-16 items-center">
             
@@ -131,7 +160,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Deep Dive 3: AI Networks */}
-      <section className="bg-black py-24 mb-24 overflow-hidden text-white relative">
+      <section id="ai-agents" className="bg-black py-24 mb-24 overflow-hidden text-white relative">
          <div className="absolute top-0 right-0 w-full h-full overflow-hidden pointer-events-none">
             <div className="absolute top-[-20%] right-[-10%] w-[60%] h-[80%] bg-white opacity-[0.02] blur-[150px] rounded-full"></div>
          </div>
@@ -184,7 +213,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Additional Capabilities Grid */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24">
+      <section id="enterprise-services" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24">
          <div className="mb-12 text-center">
             <h3 className="text-3xl font-extrabold text-black tracking-tight">Additional Enterprise Services</h3>
          </div>

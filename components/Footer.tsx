@@ -22,13 +22,13 @@ export default function Footer() {
               The enterprise development company behind the Quantachain ecosystem. We build robust, scalable, and intelligent blockchain solutions for institutions worldwide.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="p-2.5 bg-white border border-gray-200 rounded-full text-black hover:bg-black hover:text-white hover:border-black transition-all">
+              <a href="/" className="p-2.5 bg-white border border-gray-200 rounded-full text-black hover:bg-black hover:text-white hover:border-black transition-all">
                 <Globe size={18} />
               </a>
-              <a href="#" className="p-2.5 bg-white border border-gray-200 rounded-full text-black hover:bg-black hover:text-white hover:border-black transition-all">
+              <a href="mailto:contact@quantalabs.com" className="p-2.5 bg-white border border-gray-200 rounded-full text-black hover:bg-black hover:text-white hover:border-black transition-all">
                 <Mail size={18} />
               </a>
-              <a href="https://quantachain.org" className="p-2.5 bg-white border border-gray-200 rounded-full text-black hover:bg-black hover:text-white hover:border-black transition-all">
+              <a href="https://quantachain.org" className="p-2.5 bg-white border border-gray-200 rounded-full text-black hover:bg-black hover:text-white hover:border-black transition-all" target="_blank" rel="noopener noreferrer">
                 <MessageSquare size={18} />
               </a>
             </div>
@@ -37,11 +37,10 @@ export default function Footer() {
           <div>
             <h3 className="font-bold text-black mb-4">Services</h3>
             <ul className="space-y-3">
-              <li><Link href="/services" className="text-gray-500 hover:text-black text-sm font-medium transition-colors">Custom Blockchains</Link></li>
-              <li><Link href="/services" className="text-gray-500 hover:text-black text-sm font-medium transition-colors">Blockchain Development</Link></li>
-              <li><Link href="/services" className="text-gray-500 hover:text-black text-sm font-medium transition-colors">Blockchain with AI</Link></li>
-              <li><Link href="/services" className="text-gray-500 hover:text-black text-sm font-medium transition-colors">Enterprise Solutions</Link></li>
-              <li><Link href="/services" className="text-gray-500 hover:text-black text-sm font-medium transition-colors">Exclusive PQC Migrations</Link></li>
+              <li><Link href="/services#appchains" className="text-gray-500 hover:text-black text-sm font-medium transition-colors">Sovereign L2 AppChains</Link></li>
+              <li><Link href="/services#pqc-migrations" className="text-gray-500 hover:text-black text-sm font-medium transition-colors">Mainnet PQC Migrations</Link></li>
+              <li><Link href="/services#ai-agents" className="text-gray-500 hover:text-black text-sm font-medium transition-colors">Autonomous AI Agents</Link></li>
+              <li><Link href="/services#enterprise-services" className="text-gray-500 hover:text-black text-sm font-medium transition-colors">Enterprise Services</Link></li>
             </ul>
           </div>
 
