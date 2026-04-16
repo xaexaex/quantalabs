@@ -4,8 +4,6 @@ declare global {
   var mongoose: any;
 }
 
-const MONGODB_URI = process.env.MONGO_URI;
-
 let cached = global.mongoose;
 
 if (!cached) {
@@ -13,6 +11,7 @@ if (!cached) {
 }
 
 async function dbConnect() {
+  const MONGODB_URI = process.env.MONGO_URI;
   if (!MONGODB_URI) {
     throw new Error("Please define the MONGO_URI environment variable inside Vercel Dashboard");
   }
