@@ -18,7 +18,7 @@ export default function Hero() {
               className="text-[3.25rem] sm:text-6xl lg:text-7xl font-extrabold tracking-tighter text-black mb-6 md:mb-8 leading-tight md:leading-[1.05]"
             >
               Enterprise AI & <br className="hidden md:block" />
-              <span className="text-gray-400">PQC Blockchain</span> Solutions.
+              <span className="text-[#00E599]">PQC Blockchain</span> Solutions.
             </h1>
 
             <p className="text-lg md:text-xl text-gray-600 mb-10 leading-relaxed font-medium max-w-xl">
@@ -29,17 +29,17 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center space-y-4 sm:space-y-0 sm:space-x-4 w-full sm:w-auto">
               <Link 
                 href="/services" 
-                className="group flex items-center justify-center space-x-2 px-8 py-4 bg-black text-white rounded-full font-bold hover:bg-gray-800 transition-all duration-300 w-full sm:w-auto hover:shadow-xl"
+                className="group flex items-center justify-center space-x-2 px-8 py-4 bg-black text-white rounded-full font-medium hover:bg-[#00E599] hover:text-black transition-all hover:scale-105 active:scale-95 w-full sm:w-auto"
               >
                 <span>Explore Solutions</span>
-                <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                <ArrowUpRight className="w-4 h-4" />
               </Link>
               
               <Link 
                 href="/contact" 
-                className="group flex items-center justify-center space-x-2 px-6 py-4 bg-transparent text-gray-600 rounded-full font-bold hover:text-black hover:bg-gray-50 transition-all w-full sm:w-auto"
+                className="group flex items-center justify-center space-x-2 px-6 py-4 bg-transparent text-gray-600 rounded-full font-medium hover:text-black hover:bg-gray-50 transition-all w-full sm:w-auto"
               >
-                <PlayCircle className="w-6 h-6 text-gray-400 group-hover:text-black transition-colors" />
+                <PlayCircle className="w-5 h-5 text-gray-400 group-hover:text-[#00E599] transition-colors" />
                 <span>Contact Partnerships</span>
               </Link>
             </div>
@@ -57,7 +57,7 @@ export default function Hero() {
                       <stop offset="100%" stopColor="#eeeeee" />
                     </linearGradient>
                     <radialGradient id="coreGlow" cx="50%" cy="50%" r="50%">
-                      <stop offset="0%" stopColor="rgba(0,0,0,0.05)" />
+                      <stop offset="0%" stopColor="rgba(0,229,153,0.08)" />
                       <stop offset="100%" stopColor="rgba(0,0,0,0)" />
                     </radialGradient>
                     <filter id="shadowC" x="-20%" y="-20%" width="140%" height="140%">
@@ -158,7 +158,7 @@ export default function Hero() {
                   
                   {/* QBIT Core Node */}
                   <circle cx="300" cy="300" r="12" fill="#ffffff" />
-                  <circle cx="300" cy="300" r="5" fill="#000000">
+                  <circle cx="300" cy="300" r="5" fill="#00E599">
                      <animate attributeName="r" values="3.5; 5; 3.5" dur="2s" repeatCount="indefinite" />
                   </circle>
 

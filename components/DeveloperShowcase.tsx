@@ -41,10 +41,8 @@ fn main() -> Result<(), CoreError> {
         <div className="flex flex-col lg:flex-row items-center gap-16">
           
           {/* Text Content */}
-          <div 
-            className="w-full lg:w-5/12 animate-fade-in"
-          >
-            <span className="text-gray-400 font-bold tracking-widest uppercase text-xs mb-6 block">
+          <div className="w-full lg:w-5/12 animate-fade-in">
+            <span className="text-[#00E599] font-bold tracking-widest uppercase text-xs mb-6 block">
               Core Protocol R&D
             </span>
             <h2 className="text-4xl md:text-5xl font-extrabold text-black tracking-tighter mb-6 leading-tight">
@@ -55,19 +53,17 @@ fn main() -> Result<(), CoreError> {
               We specialize in custom L1/L2 blockchain engineering, seamless mainnet Post-Quantum Cryptography (PQC) migrations, and native AI validator integration. Build sovereign infrastructure that outlives modern encryption.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/services" className="bg-black text-white px-8 py-4 rounded-xl font-bold hover:bg-gray-800 transition-all text-center">
+              <Link href="/services" className="bg-black text-white px-8 py-4 rounded-full font-medium hover:bg-[#00E599] hover:text-black transition-all hover:scale-105 active:scale-95 text-center">
                 Explore Services
               </Link>
-              <Link href="/research" className="bg-white text-black border border-gray-200 px-8 py-4 rounded-xl font-bold hover:border-black transition-all text-center">
+              <Link href="/research" className="bg-white text-black border border-gray-200 px-8 py-4 rounded-full font-medium hover:border-[#00E599] hover:text-[#00E599] transition-all text-center">
                 Read Research
               </Link>
             </div>
           </div>
 
           {/* Code Terminal */}
-          <div 
-            className="w-full lg:w-7/12 animate-fade-in"
-          >
+          <div className="w-full lg:w-7/12 animate-fade-in">
             <div className="bg-[#0A0A0A] border border-gray-800 rounded-2xl overflow-hidden shadow-2xl">
               {/* Terminal Header */}
               <div className="flex items-center justify-between px-4 py-3 border-b border-gray-800 bg-[#111]">
@@ -80,8 +76,8 @@ fn main() -> Result<(), CoreError> {
                   <Terminal className="w-3 h-3 mr-2" />
                   src/node/bootstrap.rs
                 </div>
-                <button onClick={copyToClipboard} className="text-gray-500 hover:text-white transition-colors">
-                  {copied ? <CheckCircle2 className="w-4 h-4 text-green-400" /> : <Copy className="w-4 h-4" />}
+                <button onClick={copyToClipboard} className="text-gray-500 hover:text-[#00E599] transition-colors">
+                  {copied ? <CheckCircle2 className="w-4 h-4 text-[#00E599]" /> : <Copy className="w-4 h-4" />}
                 </button>
               </div>
               
@@ -93,16 +89,16 @@ fn main() -> Result<(), CoreError> {
                     <span className="text-blue-400">use</span> quanta_core::consensus::PqcConsensus;<br />
                     <span className="text-blue-400">use</span> quanta_ai::agents::ValidatorAgent;<br />
                     <br />
-                    <span className="text-blue-400">fn</span> <span className="text-yellow-200">main</span>() -&gt; <span className="text-emerald-400">Result</span>&lt;(), <span className="text-emerald-400">CoreError</span>&gt; {'{'}<br />
+                    <span className="text-blue-400">fn</span> <span className="text-yellow-200">main</span>() -&gt; <span className="text-[#00E599]">Result</span>&lt;(), <span className="text-[#00E599]">CoreError</span>&gt; {'{'}<br />
                     &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-gray-500">// 1. Initialize NIST-standardized PQC layer</span><br />
-                    &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-blue-400">let</span> pqc_layer = <span className="text-emerald-400">PqcConsensus</span>::<span className="text-yellow-200">new</span>(<span className="text-emerald-400">SignatureScheme</span>::Falcon512);<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-blue-400">let</span> pqc_layer = <span className="text-[#00E599]">PqcConsensus</span>::<span className="text-yellow-200">new</span>(<span className="text-[#00E599]">SignatureScheme</span>::Falcon512);<br />
                     <br />
                     &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-gray-500">// 2. Attach local autonomous validator AI</span><br />
-                    &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-blue-400">let mut</span> ai_validator = <span className="text-emerald-400">ValidatorAgent</span>::<span className="text-yellow-200">new</span>(<span className="text-emerald-400">Model</span>::Qwen3);<br />
-                    &nbsp;&nbsp;&nbsp;&nbsp;ai_validator.<span className="text-yellow-200">set_strategy</span>(<span className="text-emerald-400">ValidationStrategy</span>::OptimizeYield);<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-blue-400">let mut</span> ai_validator = <span className="text-[#00E599]">ValidatorAgent</span>::<span className="text-yellow-200">new</span>(<span className="text-[#00E599]">Model</span>::Qwen3);<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;ai_validator.<span className="text-yellow-200">set_strategy</span>(<span className="text-[#00E599]">ValidationStrategy</span>::OptimizeYield);<br />
                     <br />
                     &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-gray-500">// 3. Launch the custom network node</span><br />
-                    &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-blue-400">let</span> node = <span className="text-emerald-400">QuantaNodeBuilder</span>::<span className="text-yellow-200">new</span>()<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-blue-400">let</span> node = <span className="text-[#00E599]">QuantaNodeBuilder</span>::<span className="text-yellow-200">new</span>()<br />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<span className="text-yellow-200">with_consensus</span>(pqc_layer)<br />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<span className="text-yellow-200">with_ai_validator</span>(ai_validator)<br />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<span className="text-yellow-200">build</span>()?;<br />

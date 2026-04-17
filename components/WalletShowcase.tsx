@@ -17,18 +17,16 @@ export default function WalletShowcase() {
       
       {/* Background ambient lighting */}
       <div className="absolute top-0 right-0 w-full h-full overflow-hidden pointer-events-none">
-        <div className="absolute -top-[10%] -right-[10%] w-[50%] h-[50%] bg-gray-50 opacity-50 blur-[100px] rounded-full"></div>
+        <div className="absolute -top-[10%] -right-[10%] w-[50%] h-[50%] bg-[#00E599]/5 opacity-50 blur-[100px] rounded-full"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
           {/* Left Column: Copy */}
-          <div 
-            className="flex flex-col animate-fade-in"
-          >
+          <div className="flex flex-col animate-fade-in">
             <div className="flex items-center space-x-3 mb-6">
-              <ShieldCheck className="w-5 h-5 text-gray-500" />
+              <ShieldCheck className="w-5 h-5 text-[#00E599]" />
               <span className="font-bold tracking-widest text-xs uppercase text-gray-400">First-Party Products</span>
             </div>
             
@@ -49,7 +47,7 @@ export default function WalletShowcase() {
                 href="https://chromewebstore.google.com/detail/quanta-wallet/glofbcgdmodmaohealombcgoapdbdaff?pli=1" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center justify-center space-x-3 px-8 py-4 bg-black text-white rounded-xl font-bold hover:bg-gray-800 transition-colors shadow-lg shadow-black/10"
+                className="group flex items-center justify-center space-x-3 px-8 py-4 bg-black text-white rounded-full font-medium hover:bg-[#00E599] hover:text-black transition-all hover:scale-105 active:scale-95 shadow-lg shadow-black/10"
               >
                 <Download className="w-5 h-5" />
                 <span>Download on Chrome</span>
@@ -61,7 +59,7 @@ export default function WalletShowcase() {
                  const Icon = opt.icon;
                  return (
                    <div key={i} className="flex flex-col space-y-3">
-                     <div className="w-10 h-10 rounded-xl bg-gray-50 border border-gray-200 flex items-center justify-center">
+                     <div className="w-10 h-10 rounded-xl bg-gray-50 border border-gray-200 flex items-center justify-center group hover:bg-[#00E599] hover:border-[#00E599] transition-all">
                        <Icon className="w-5 h-5 text-black" />
                      </div>
                      <h4 className="font-bold text-black text-sm">{opt.title}</h4>
@@ -73,9 +71,7 @@ export default function WalletShowcase() {
           </div>
 
           {/* Right Column: Visual Showcase */}
-          <div 
-            className="relative lg:h-[700px] w-full flex items-center justify-center animate-fade-in"
-          >
+          <div className="relative lg:h-[700px] w-full flex items-center justify-center animate-fade-in">
              <div className="relative w-full max-w-md bg-white rounded-[2.5rem] border border-gray-200 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] p-6 aspect-[9/16] overflow-hidden">
                 {/* Simulated Chrome Extension UI */}
                 <div className="absolute top-0 left-0 w-full bg-gray-50 border-b border-gray-200 p-4 flex items-center justify-between z-20">
@@ -85,7 +81,7 @@ export default function WalletShowcase() {
                      </div>
                      <span className="font-bold text-black text-sm">Quanta Account 1</span>
                    </div>
-                   <div className="w-2 h-2 rounded-full bg-[#00C389] shadow-[0_0_8px_#00C389]"></div>
+                   <div className="w-2 h-2 rounded-full bg-[#00E599] shadow-[0_0_8px_#00E599]"></div>
                 </div>
 
                 <div className="pt-20 pb-8 flex flex-col items-center justify-start h-full relative z-10 space-y-6">
@@ -97,13 +93,13 @@ export default function WalletShowcase() {
                    </div>
 
                    <div className="flex items-center space-x-3 w-full px-2">
-                     <div className="flex-1 bg-black text-white py-3.5 rounded-xl font-bold text-sm text-center shadow-md">Send</div>
-                     <div className="flex-1 bg-white text-black py-3.5 rounded-xl font-bold text-sm text-center border border-gray-200 shadow-sm hover:bg-gray-50 transition-colors">Receive</div>
+                     <div className="flex-1 bg-black text-white py-3.5 rounded-xl font-bold text-sm text-center shadow-md hover:bg-[#00E599] hover:text-black transition-colors cursor-pointer">Send</div>
+                     <div className="flex-1 bg-white text-black py-3.5 rounded-xl font-bold text-sm text-center border border-gray-200 shadow-sm hover:border-[#00E599] hover:text-[#00E599] transition-colors cursor-pointer">Receive</div>
                    </div>
 
                    <div className="w-full bg-gray-50 rounded-xl border border-gray-200 p-4">
                      <span className="text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-1.5 block">Signature Scheme</span>
-                     <span className="text-[#00C389] text-xs font-mono font-bold flex items-center">
+                     <span className="text-[#00E599] text-xs font-mono font-bold flex items-center">
                         <Shield className="w-3.5 h-3.5 mr-1.5" />
                         FALCON-512 SECURE
                      </span>
@@ -138,7 +134,7 @@ export default function WalletShowcase() {
 }
 
 // ArrowRight locally imported to fix UI component
-function ArrowRight(props: any) {
+function ArrowRight(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}

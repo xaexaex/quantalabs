@@ -27,28 +27,24 @@ export default function ServicesPreview() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-12">
-           <div 
-             className="max-w-xl animate-fade-in"
-           >
+           <div className="max-w-xl animate-fade-in">
               <h2 className="text-4xl md:text-5xl font-extrabold text-black tracking-tighter mb-6">
                 Deep-Tech Solutions <br className="hidden md:block"/> for the Vanguard.
               </h2>
               <p className="text-lg text-gray-500 font-medium mb-8">
-                We don't build generic smart contracts. We architect the sovereign infrastructure required by institutions entering the quantum era.
+                We don&apos;t build generic smart contracts. We architect the sovereign infrastructure required by institutions entering the quantum era.
               </p>
-              <Link href="/services" className="inline-flex items-center text-sm font-bold text-black border-b-[3px] border-black pb-1 hover:text-gray-500 hover:border-gray-500 transition-colors uppercase tracking-widest">
-                 Explore All Services <ArrowRight className="w-5 h-5 ml-2" />
+              <Link href="/services" className="inline-flex items-center text-sm font-bold text-black border-b-[3px] border-black pb-1 hover:text-[#00E599] hover:border-[#00E599] transition-colors uppercase tracking-widest">
+                Explore All Services <ArrowRight className="w-5 h-5 ml-2" />
               </Link>
            </div>
 
-           <div 
-             className="grid grid-cols-1 sm:grid-cols-3 gap-6 w-full lg:w-auto animate-fade-in"
-           >
+           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 w-full lg:w-auto animate-fade-in">
              {teasers.map((service, index) => {
                const Icon = service.icon;
                return (
-               <div key={index} className="bg-white border border-gray-200 rounded-3xl p-8 hover:border-black transition-all shadow-sm hover:shadow-xl w-full lg:w-[240px]">
-                 <div className="bg-gray-100 w-12 h-12 rounded-xl flex items-center justify-center mb-6">
+               <div key={index} className="bg-white border border-gray-200 rounded-3xl p-8 hover:border-[#00E599] transition-all shadow-sm hover:shadow-xl w-full lg:w-[240px]">
+                 <div className="bg-gray-100 w-12 h-12 rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#00E599]">
                    <Icon className="w-6 h-6 text-black" />
                  </div>
                  <h3 className="font-extrabold text-black text-xl mb-3 tracking-tight">{service.title}</h3>

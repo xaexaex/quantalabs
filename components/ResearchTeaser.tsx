@@ -38,7 +38,7 @@ export default function ResearchTeaser() {
         >
           <div>
             <div className="flex items-center space-x-3 mb-5">
-              <BookOpen className="w-5 h-5 text-black" />
+              <BookOpen className="w-5 h-5 text-[#00E599]" />
               <span className="font-bold tracking-widest text-xs uppercase text-gray-400">Academic Foundation</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-extrabold text-black tracking-tighter leading-tight">
@@ -47,7 +47,7 @@ export default function ResearchTeaser() {
           </div>
           <Link
             href="/research"
-            className="inline-flex items-center justify-center px-8 py-4 bg-black text-white rounded-xl font-bold hover:bg-gray-800 transition-colors shadow-lg text-sm shrink-0"
+            className="inline-flex items-center justify-center px-8 py-4 bg-black text-white rounded-full font-medium hover:bg-[#00E599] hover:text-black transition-all hover:scale-105 active:scale-95 shadow-lg text-sm shrink-0"
           >
             Read All Whitepapers
             <ArrowRight className="w-5 h-5 ml-2" />
@@ -67,7 +67,7 @@ export default function ResearchTeaser() {
               href={paper.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="group block bg-gray-50 border border-gray-100 rounded-[1.5rem] p-8 hover:bg-white hover:border-black hover:shadow-[0_8px_40px_rgba(0,0,0,0.08)] transition-all duration-300 relative overflow-hidden animate-fade-in"
+              className="group block bg-gray-50 border border-gray-100 rounded-[1.5rem] p-8 hover:bg-white hover:border-[#00E599] hover:shadow-[0_8px_40px_rgba(0,229,153,0.08)] transition-all duration-300 relative overflow-hidden animate-fade-in"
             >
               {/* Number watermark */}
               <div className="absolute top-4 right-5 text-[4rem] font-extrabold text-gray-100 leading-none select-none pointer-events-none group-hover:text-gray-200 transition-colors">
