@@ -56,8 +56,9 @@ const footerColumns = [
       { label: "Quantachain", href: "https://quantachain.org", badge: "Live", external: true },
       { label: "Block Explorer", href: "https://scan.quantachain.org", badge: "Live", external: true },
       { label: "Quanta Wallet", href: "https://chrome.google.com/webstore/detail/glofbcgdmodmaohealombcgoapdbdaff", badge: "Live", external: true },
-      { label: "NPM SDK", href: "https://www.npmjs.com/package/quanta-sdk", badge: null, external: true },
-      { label: "WASM Engine", href: "https://crates.io/crates/quanta-wasm", badge: null, external: true },
+      { label: "NPM SDK", href: "https://www.npmjs.com/package/quanta-sdk", badge: "Live", external: true },
+      { label: "WASM Engine", href: "https://crates.io/crates/quanta-wasm", badge: "Live", external: true },
+      { label: "Mobile Wallet", href: "https://github.com/quantachain/quanta-mobile-wallet", badge: "Building", external: true },
     ],
   },
   {

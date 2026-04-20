@@ -98,6 +98,7 @@ const navGroups: NavGroup[] = [
         external: true,
         description: "Official JS/TS SDK — npm install quanta-sdk",
         icon: Code2,
+        badge: "Live",
       },
       {
         name: "Block Explorer",
@@ -106,6 +107,14 @@ const navGroups: NavGroup[] = [
         description: "Real-time chain analytics & transactions",
         icon: Globe,
         badge: "Live",
+      },
+      {
+        name: "Mobile Wallet",
+        href: "https://github.com/quantachain/quanta-mobile-wallet",
+        external: true,
+        description: "Android native wallet app — Rust JNI Falcon-512",
+        icon: Cpu,
+        badge: "Building",
       },
     ],
   },
