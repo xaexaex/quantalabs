@@ -1,9 +1,27 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X, Briefcase, BookOpen, Globe, MessageSquare, Blocks, BrainCircuit, ShieldCheck, Cpu, FlaskConical, Users, Newspaper, ArrowUpRight, Layers, Code2 } from "lucide-react";
+import {
+  Menu,
+  X,
+  Briefcase,
+  BookOpen,
+  Globe,
+  MessageSquare,
+  Blocks,
+  BrainCircuit,
+  ShieldCheck,
+  Cpu,
+  FlaskConical,
+  Users,
+  Newspaper,
+  ArrowUpRight,
+  Layers,
+  Code2,
+  ChevronDown,
+} from "lucide-react";
 
 const GithubIcon = ({ className }: { className?: string }) => (
   <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -17,47 +35,128 @@ type NavItem = {
   external?: boolean;
   description?: string;
   icon?: React.ComponentType<{ className?: string }>;
+  badge?: string;
 };
 
 type NavGroup = {
   name: string;
+  href?: string;
   items: NavItem[];
+  footer?: { label: string; href: string };
 };
 
-const navItems: NavGroup[] = [
+const navGroups: NavGroup[] = [
   {
     name: "Solutions",
+    href: "/services",
+    footer: { label: "View all services →", href: "/services" },
     items: [
-      { name: "L2 Protocol Engineering", href: "/services#appchains", description: "Sovereign Layer 2 rollups & appchains", icon: Layers },
-      { name: "Post-Quantum Security", href: "/services#pqc-migrations", description: "NIST-standardized PQC infrastructure migrations", icon: ShieldCheck },
-      { name: "AI-Driven Node Networks", href: "/services#ai-agents", description: "Autonomous on-chain intelligence architectures", icon: BrainCircuit },
-      { name: "Enterprise Advisory", href: "/services#advisory", description: "Strategic blockchain & cryptography consulting", icon: Briefcase },
+      {
+        name: "L2 AppChains",
+        href: "/services/appchains",
+        description: "Sovereign Layer 2 rollups with 124K TPS",
+        icon: Layers,
+        badge: "Live",
+      },
+      {
+        name: "PQC Migrations",
+        href: "/services/pqc-migrations",
+        description: "NIST Falcon-512 & Kyber KEM migrations",
+        icon: ShieldCheck,
+      },
+      {
+        name: "AI Agents",
+        href: "/services/ai-agents",
+        description: "Deterministic on-chain LLM agent frameworks",
+        icon: BrainCircuit,
+      },
     ],
   },
   {
     name: "Ecosystem",
+    footer: { label: "Explore the ecosystem →", href: "/ecosystem" },
     items: [
-      { name: "Quantachain L1", href: "https://quantachain.org", external: true, description: "The post-quantum Layer 1 blockchain", icon: Blocks },
-      { name: "Quanta Wallet", href: "https://chrome.google.com/webstore/detail/glofbcgdmodmaohealombcgoapdbdaff", external: true, description: "Falcon-512 secured Chrome extension wallet", icon: Cpu },
-      { name: "Developer SDK", href: "https://www.npmjs.com/package/quanta-sdk", external: true, description: "Official JS/TS client library", icon: Code2 },
-      { name: "Block Explorer", href: "https://scan.quantachain.org", external: true, description: "Real-time chain analytics & transactions", icon: Globe },
+      {
+        name: "Quantachain L1",
+        href: "https://quantachain.org",
+        external: true,
+        description: "The post-quantum Layer 1 blockchain",
+        icon: Blocks,
+        badge: "Live",
+      },
+      {
+        name: "Quanta Wallet",
+        href: "https://chrome.google.com/webstore/detail/glofbcgdmodmaohealombcgoapdbdaff",
+        external: true,
+        description: "Falcon-512 secured Chrome extension wallet",
+        icon: Cpu,
+        badge: "Live",
+      },
+      {
+        name: "Developer SDK",
+        href: "https://www.npmjs.com/package/quanta-sdk",
+        external: true,
+        description: "Official JS/TS SDK — npm install quanta-sdk",
+        icon: Code2,
+      },
+      {
+        name: "Block Explorer",
+        href: "https://scan.quantachain.org",
+        external: true,
+        description: "Real-time chain analytics & transactions",
+        icon: Globe,
+        badge: "Live",
+      },
     ],
   },
   {
     name: "Research",
+    footer: { label: "Read all publications →", href: "/research" },
     items: [
-      { name: "Publications", href: "/research", description: "Peer-reviewed cryptography research", icon: FlaskConical },
-      { name: "Whitepaper", href: "/docs/WHITEPAPER.docx", description: "Protocol architecture & technical specs", icon: BookOpen },
-      { name: "Open Source", href: "https://github.com/quantachain", external: true, description: "Core protocol repositories on GitHub", icon: GithubIcon },
+      {
+        name: "Publications",
+        href: "/research",
+        description: "Peer-reviewed PQC & blockchain research",
+        icon: FlaskConical,
+      },
+      {
+        name: "Whitepaper",
+        href: "/docs/WHITEPAPER.docx",
+        description: "Protocol architecture & technical specs",
+        icon: BookOpen,
+      },
+      {
+        name: "Open Source",
+        href: "https://github.com/quantachain",
+        external: true,
+        description: "Core protocol repositories on GitHub",
+        icon: GithubIcon,
+      },
     ],
   },
   {
     name: "Company",
+    footer: { label: "View open roles →", href: "/careers" },
     items: [
-      { name: "About Us", href: "/about", description: "Our mission in sovereign digital infrastructure", icon: Globe },
-      { name: "Team", href: "/team", description: "The engineers & cryptographers behind Quanta", icon: Users },
-      { name: "Careers", href: "/careers", description: "Join a world-class protocol engineering team", icon: ArrowUpRight },
-      { name: "Press & Media", href: "/press", description: "Brand assets, news & announcements", icon: Newspaper },
+      {
+        name: "Ecosystem",
+        href: "/ecosystem",
+        description: "Our post-quantum product suite",
+        icon: Globe,
+      },
+      {
+        name: "Careers",
+        href: "/careers",
+        description: "Join our protocol engineering team",
+        icon: Users,
+        badge: "Hiring",
+      },
+      {
+        name: "Contact",
+        href: "/contact",
+        description: "Partnerships, enterprise & press enquiries",
+        icon: MessageSquare,
+      },
     ],
   },
 ];
@@ -66,23 +165,40 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Close mobile menu on route change
+  useEffect(() => {
+    setIsOpen(false);
+  }, []);
+
+  const handleMouseEnter = (name: string) => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    setActiveDropdown(name);
+  };
+
+  const handleMouseLeave = () => {
+    closeTimer.current = setTimeout(() => setActiveDropdown(null), 120);
+  };
+
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      scrolled
-        ? "bg-white/80 backdrop-blur-xl border-b border-gray-100 shadow-sm"
-        : "bg-transparent border-b border-transparent"
-    }`}>
-      <div className="container mx-auto px-6 h-20">
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-white/90 backdrop-blur-xl border-b border-gray-100 shadow-sm"
+          : "bg-transparent border-b border-transparent"
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20">
         <div className="flex items-center justify-between h-full">
+
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 flex-shrink-0 group">
             <Image
@@ -90,53 +206,96 @@ export default function Navbar() {
               alt="Quantalabs Logo"
               width={48}
               height={48}
-              className="w-10 h-10 transition-transform group-hover:scale-110"
+              className="w-9 h-9 transition-transform group-hover:scale-110"
               priority
             />
-            <span className="text-xl md:text-2xl font-bold tracking-tighter text-black">
+            <span className="text-xl font-bold tracking-tighter text-black">
               Quantalabs<span className="text-[#00E599]">.</span>
             </span>
           </Link>
 
-          {/* Desktop Navigation - Centered */}
-          <div className="hidden lg:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
-            {navItems.map((item) => (
+          {/* Desktop nav */}
+          <div className="hidden lg:flex items-center gap-1">
+            {navGroups.map((group) => (
               <div
-                key={item.name}
+                key={group.name}
                 className="relative"
-                onMouseEnter={() => setActiveDropdown(item.name)}
-                onMouseLeave={() => setActiveDropdown(null)}
+                onMouseEnter={() => handleMouseEnter(group.name)}
+                onMouseLeave={handleMouseLeave}
               >
-                <button className={`text-sm font-semibold transition-colors flex items-center gap-1 cursor-pointer ${
-                  activeDropdown === item.name ? "text-[#00E599]" : "text-gray-600 hover:text-black"
-                }`}>
-                  {item.name}
+                <button
+                  className={`inline-flex items-center gap-1 px-4 py-2 text-sm font-semibold rounded-full transition-all ${
+                    activeDropdown === group.name
+                      ? "text-black bg-gray-100"
+                      : "text-gray-600 hover:text-black hover:bg-gray-50"
+                  }`}
+                >
+                  {group.name}
+                  <ChevronDown
+                    className={`w-3.5 h-3.5 transition-transform duration-200 ${
+                      activeDropdown === group.name ? "rotate-180 text-[#00E599]" : ""
+                    }`}
+                  />
                 </button>
 
-                {/* Dropdown */}
-                {activeDropdown === item.name && (
-                  <div className="absolute top-full left-1/2 -translate-x-1/2 pt-6 w-[22rem] z-50 animate-in fade-in slide-in-from-top-2 duration-200">
-                    <div className="bg-white rounded-2xl shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] p-2 border border-black/5 overflow-hidden ring-1 ring-black/5">
-                      <div className="grid gap-1">
-                        {item.items.map((subItem) => (
+                {/* Dropdown panel */}
+                {activeDropdown === group.name && (
+                  <div
+                    className="absolute top-full left-1/2 -translate-x-1/2 pt-3 z-50"
+                    style={{ minWidth: "22rem" }}
+                    onMouseEnter={() => handleMouseEnter(group.name)}
+                    onMouseLeave={handleMouseLeave}
+                  >
+                    <div className="bg-white rounded-2xl shadow-[0_24px_60px_-10px_rgba(0,0,0,0.12)] border border-black/5 overflow-hidden">
+                      <div className="p-2">
+                        {group.items.map((item) => (
                           <Link
-                            key={subItem.name}
-                            href={subItem.href}
-                            target={subItem.external ? "_blank" : undefined}
-                            className="group flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 transition-all duration-200"
+                            key={item.name}
+                            href={item.href}
+                            target={item.external ? "_blank" : undefined}
+                            rel={item.external ? "noopener noreferrer" : undefined}
+                            className="group/item flex items-start gap-3 p-3 rounded-xl hover:bg-gray-50 transition-all"
+                            onClick={() => setActiveDropdown(null)}
                           >
-                            <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-gray-100 flex items-center justify-center text-gray-500 group-hover:bg-[#00E599] group-hover:text-black transition-all duration-300">
-                              {subItem.icon && <subItem.icon className="w-5 h-5" />}
+                            <div className="flex-shrink-0 w-9 h-9 rounded-lg bg-gray-100 flex items-center justify-center text-gray-500 group-hover/item:bg-black group-hover/item:text-white transition-all">
+                              {item.icon && <item.icon className="w-4 h-4" />}
                             </div>
-                            <div>
-                              <span className="text-sm font-bold text-gray-900 group-hover:text-black transition-colors block mb-0.5">{subItem.name}</span>
-                              <p className="text-xs text-gray-500 leading-relaxed font-medium group-hover:text-gray-600">
-                                {subItem.description}
+                            <div className="flex-1 min-w-0">
+                              <div className="flex items-center gap-2 mb-0.5">
+                                <span className="text-sm font-bold text-gray-900">{item.name}</span>
+                                {item.badge && (
+                                  <span className={`text-[10px] font-black px-2 py-0.5 rounded-full ${
+                                    item.badge === "Hiring"
+                                      ? "bg-blue-50 text-blue-600 border border-blue-100"
+                                      : "bg-green-50 text-green-700 border border-green-100"
+                                  }`}>
+                                    {item.badge}
+                                  </span>
+                                )}
+                                {item.external && (
+                                  <ArrowUpRight className="w-3 h-3 text-gray-300 group-hover/item:text-gray-500 transition-colors" />
+                                )}
+                              </div>
+                              <p className="text-xs text-gray-500 font-medium leading-snug">
+                                {item.description}
                               </p>
                             </div>
                           </Link>
                         ))}
                       </div>
+
+                      {/* Footer link */}
+                      {group.footer && (
+                        <div className="px-4 py-3 border-t border-gray-50 bg-gray-50/50">
+                          <Link
+                            href={group.footer.href}
+                            className="text-xs font-bold text-gray-400 hover:text-[#00E599] transition-colors"
+                            onClick={() => setActiveDropdown(null)}
+                          >
+                            {group.footer.label}
+                          </Link>
+                        </div>
+                      )}
                     </div>
                   </div>
                 )}
@@ -144,58 +303,101 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* Right Side Actions */}
+          {/* Right side actions */}
           <div className="flex items-center gap-2 flex-shrink-0">
-            <Link
+            <a
               href="https://github.com/quantachain"
               target="_blank"
-              className="hidden md:inline-flex items-center justify-center w-10 h-10 text-gray-600 hover:text-[#00E599] transition-all hover:bg-gray-50 rounded-full hover:scale-110"
+              rel="noopener noreferrer"
+              className="hidden md:inline-flex items-center justify-center w-9 h-9 text-gray-500 hover:text-black transition-all hover:bg-gray-100 rounded-full"
+              aria-label="GitHub"
             >
-              <GithubIcon className="w-5 h-5" />
-            </Link>
+              <GithubIcon className="w-4.5 h-4.5 w-[18px] h-[18px]" />
+            </a>
             <Link
               href="/contact"
-              className="hidden md:inline-flex items-center gap-2 px-6 py-2.5 bg-black text-white rounded-full font-semibold text-sm hover:bg-[#00E599] hover:text-black transition-all hover:scale-105 active:scale-95"
+              className="hidden md:inline-flex items-center gap-1.5 px-5 py-2.5 bg-black text-white rounded-full font-semibold text-sm hover:bg-[#00E599] hover:text-black transition-all"
             >
               Contact Us
             </Link>
-            {/* Mobile menu button */}
+            {/* Mobile toggle */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="lg:hidden w-10 h-10 flex items-center justify-center text-gray-600 hover:text-black transition-colors"
+              className="lg:hidden w-10 h-10 flex items-center justify-center text-gray-600 hover:text-black transition-colors rounded-full hover:bg-gray-100"
+              aria-label="Toggle menu"
             >
-              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* ── MOBILE MENU ───────────────────────────────────────── */}
       {isOpen && (
-        <div className="lg:hidden border-t border-gray-100 bg-white fixed inset-x-0 top-20 bottom-0 overflow-y-auto z-40">
-          <div className="container mx-auto px-6 py-6 flex flex-col gap-6">
-            {navItems.map((item) => (
-              <div key={item.name}>
-                <h4 className="font-bold text-sm uppercase tracking-wider text-gray-900 mb-3">{item.name}</h4>
-                <div className="space-y-1 pl-4">
-                  {item.items.map((subItem) => (
-                    <Link
-                      key={subItem.name}
-                      href={subItem.href}
-                      target={subItem.external ? "_blank" : undefined}
-                      className="flex items-center justify-between py-2 text-gray-600 hover:text-[#00E599] transition-colors"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      <span className="text-sm font-medium">{subItem.name}</span>
-                    </Link>
-                  ))}
-                </div>
+        <div className="lg:hidden fixed inset-x-0 top-20 bottom-0 bg-white border-t border-gray-100 overflow-y-auto z-40">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 flex flex-col gap-2">
+
+            {navGroups.map((group) => (
+              <div key={group.name} className="border border-gray-100 rounded-2xl overflow-hidden">
+                {/* Group header */}
+                <button
+                  onClick={() =>
+                    setMobileExpanded(mobileExpanded === group.name ? null : group.name)
+                  }
+                  className="w-full flex items-center justify-between px-5 py-4 text-left"
+                >
+                  <span className="font-bold text-sm text-black uppercase tracking-wider">
+                    {group.name}
+                  </span>
+                  <ChevronDown
+                    className={`w-4 h-4 text-gray-400 transition-transform ${
+                      mobileExpanded === group.name ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+
+                {/* Expanded items */}
+                {mobileExpanded === group.name && (
+                  <div className="border-t border-gray-50 bg-gray-50/50 px-3 py-2">
+                    {group.items.map((item) => (
+                      <Link
+                        key={item.name}
+                        href={item.href}
+                        target={item.external ? "_blank" : undefined}
+                        rel={item.external ? "noopener noreferrer" : undefined}
+                        className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-white transition-colors"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        <div className="w-8 h-8 rounded-lg bg-white border border-gray-100 flex items-center justify-center shrink-0">
+                          {item.icon && <item.icon className="w-4 h-4 text-gray-600" />}
+                        </div>
+                        <div>
+                          <div className="flex items-center gap-2">
+                            <span className="text-sm font-bold text-gray-900">{item.name}</span>
+                            {item.badge && (
+                              <span className={`text-[10px] font-black px-1.5 py-0.5 rounded-full ${
+                                item.badge === "Hiring"
+                                  ? "bg-blue-50 text-blue-600"
+                                  : "bg-green-50 text-green-700"
+                              }`}>
+                                {item.badge}
+                              </span>
+                            )}
+                          </div>
+                          <p className="text-xs text-gray-500 font-medium">{item.description}</p>
+                        </div>
+                        {item.external && <ArrowUpRight className="w-3.5 h-3.5 text-gray-300 ml-auto shrink-0" />}
+                      </Link>
+                    ))}
+                  </div>
+                )}
               </div>
             ))}
+
             <Link
               href="/contact"
               onClick={() => setIsOpen(false)}
-              className="block px-6 py-4 text-base font-black text-white bg-black rounded-full text-center mt-2 hover:bg-[#00E599] hover:text-black transition-all"
+              className="mt-2 block px-6 py-4 text-sm font-bold text-white bg-black rounded-2xl text-center hover:bg-[#00E599] hover:text-black transition-all uppercase tracking-wider"
             >
               Contact Us
             </Link>

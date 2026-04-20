@@ -33,5 +33,9 @@ export const metadata: Metadata = {
 };
 
 export default function CareersPage() {
-  return <CareersSection />;
+  return (
+    <div className="min-h-screen">
+      <CareersSection />
+    </div>
+  );
 }
