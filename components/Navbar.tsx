@@ -129,6 +129,13 @@ const navGroups: NavGroup[] = [
         icon: FlaskConical,
       },
       {
+        name: "Blog",
+        href: "/blog",
+        description: "Technical insights & threat intelligence",
+        icon: Newspaper,
+        badge: "New",
+      },
+      {
         name: "Whitepaper",
         href: "/docs/WHITEPAPER.docx",
         description: "Protocol architecture & technical specs",

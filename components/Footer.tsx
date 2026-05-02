@@ -66,6 +66,7 @@ const footerColumns = [
     links: [
       { label: "Ecosystem", href: "/ecosystem", badge: null },
       { label: "Research", href: "/research", badge: null },
+      { label: "Blog", href: "/blog", badge: "New" },
       { label: "Careers", href: "/careers", badge: "Hiring" },
       { label: "Contact", href: "/contact", badge: null },
       { label: "Partnerships", href: "mailto:hello@quantalabs.cc", badge: null },
