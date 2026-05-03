@@ -109,6 +109,22 @@ const navGroups: NavGroup[] = [
         badge: "Live",
       },
       {
+        name: "Mining Pool Server",
+        href: "https://github.com/quantachain/quanta-pool",
+        external: true,
+        description: "High-performance Stratum-Q pool server",
+        icon: Globe,
+        badge: "Live",
+      },
+      {
+        name: "Data Indexer",
+        href: "https://github.com/quantachain/quanta-indexer",
+        external: true,
+        description: "High-throughput blockchain data indexer",
+        icon: Code2,
+        badge: "Live",
+      },
+      {
         name: "Mobile Wallet",
         href: "https://github.com/quantachain/quanta-mobile-wallet",
         external: true,

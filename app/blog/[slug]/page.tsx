@@ -207,7 +207,7 @@ function ECDSAPost() {
         <li>Implement crypto agility in your signing layer. Even if you stay on ECDSA today, your codebase should be structured so the signing scheme is swappable without a full protocol rewrite.</li>
       </ul>
       <p>
-        <strong>If you want help:</strong> QuantaLabs offers cryptographic readiness audits and Falcon-512 / Kyber-1024 migration engineering. We have done this on a production network. Reach us at <a href="mailto:enterprise@quantalabs.cc">enterprise@quantalabs.cc</a>.
+        <strong>If you want help:</strong> QuantaLabs offers cryptographic readiness audits and Falcon-512 / Kyber-1024 migration engineering. We have done this on a production network. Reach us at <a href="mailto:contact@quantalabs.cc">contact@quantalabs.cc</a>.
       </p>
 
       <hr />

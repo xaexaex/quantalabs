@@ -91,13 +91,13 @@ export default function ContactSection() {
                     <p className="text-black font-bold text-sm">hello@quantalabs.cc</p>
                   </div>
                 </a>
-                <a href="mailto:enterprise@quantalabs.cc" className="group flex items-start gap-4 p-5 bg-gray-50 border border-gray-100 rounded-2xl hover:border-black hover:bg-white transition-all shadow-sm hover:shadow-lg">
+                <a href="mailto:contact@quantalabs.cc" className="group flex items-start gap-4 p-5 bg-gray-50 border border-gray-100 rounded-2xl hover:border-black hover:bg-white transition-all shadow-sm hover:shadow-lg">
                   <div className="w-10 h-10 bg-white border border-gray-200 rounded-xl flex items-center justify-center shrink-0 shadow-sm group-hover:bg-black group-hover:border-black transition-colors">
                     <Building2 className="w-4 h-4 text-black group-hover:text-white transition-colors" />
                   </div>
                   <div>
                     <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-1">Enterprise & L2 Projects</p>
-                    <p className="text-black font-bold text-sm">enterprise@quantalabs.cc</p>
+                    <p className="text-black font-bold text-sm">contact@quantalabs.cc</p>
                   </div>
                 </a>
                 <div className="group flex items-start gap-4 p-5 bg-gray-50 border border-gray-100 rounded-2xl">
@@ -129,7 +129,7 @@ export default function ContactSection() {
           >
             <div className="bg-white border border-gray-200 rounded-[2rem] p-8 md:p-12 shadow-[0_8px_40px_rgba(0,0,0,0.06)] relative overflow-hidden">
               <h2 className="text-2xl font-extrabold text-black tracking-tight mb-8">Send an Inquiry</h2>
-              
+
               {status === "success" ? (
                 <div className="py-12 flex flex-col items-center justify-center text-center animate-fade-in">
                   <div className="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mb-6">
@@ -139,7 +139,7 @@ export default function ContactSection() {
                   <p className="text-gray-500 font-medium max-w-sm">
                     Thank you for reaching out. Our team will review your inquiry and respond shortly.
                   </p>
-                  <button 
+                  <button
                     onClick={() => setStatus("idle")}
                     className="mt-8 text-sm font-bold uppercase tracking-widest text-black hover:text-gray-600 transition-colors"
                   >
@@ -203,7 +203,7 @@ export default function ContactSection() {
                         {formData.topic}
                         <ChevronDown className={`w-4 h-4 text-gray-400 transition-transform duration-200 ${isTopicOpen ? 'rotate-180' : ''}`} />
                       </button>
-                      
+
                       {isTopicOpen && (
                         <>
                           <div className="fixed inset-0 z-10" onClick={() => setIsTopicOpen(false)} />

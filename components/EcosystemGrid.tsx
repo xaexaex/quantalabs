@@ -125,6 +125,64 @@ export default function EcosystemGrid() {
         </div>
       </div>
 
+      {/* Quanta Mining Pool - Horizontal Card */}
+      <a
+        href="https://github.com/quantachain/quanta-pool"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group relative md:col-span-1 border border-transparent p-8 md:p-10 bg-gray-50 hover:bg-white rounded-[2rem] hover:border-black transition-all shadow-none hover:shadow-2xl hover:shadow-gray-200/50 flex flex-col justify-between"
+      >
+        <div className="relative z-10">
+          <div className="bg-white border border-gray-200 w-14 h-14 rounded-2xl flex items-center justify-center mb-8 shadow-sm group-hover:scale-110 transition-transform duration-500 group-hover:border-black">
+            <span className="text-2xl">⛏️</span>
+          </div>
+          <h3 className="text-2xl font-extrabold text-black mb-3 tracking-tight">
+            Quanta Pool
+          </h3>
+          <p className="text-gray-500 font-medium leading-relaxed text-sm">
+            High-performance Stratum-Q mining pool server with native Falcon-512 PPLNS payouts.
+          </p>
+        </div>
+
+        <div className="mt-8 relative z-10 flex justify-between items-center">
+            <span className="text-[10px] bg-white border border-gray-200 px-3 py-1 rounded-full font-black uppercase tracking-[0.1em] text-gray-500 group-hover:border-black group-hover:text-black transition-colors">
+              GitHub
+            </span>
+             <div className="bg-white border border-gray-200 rounded-full p-2.5 group-hover:bg-black group-hover:border-black transition-colors shadow-sm">
+                <ArrowUpRight className="w-4 h-4 text-black group-hover:text-white transition-colors" />
+             </div>
+        </div>
+      </a>
+
+      {/* Quanta Indexer - Horizontal Card */}
+      <a
+        href="https://github.com/quantachain/quanta-indexer"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group relative md:col-span-2 border border-transparent p-8 md:p-10 bg-gray-50 hover:bg-white rounded-[2rem] hover:border-black transition-all shadow-none hover:shadow-2xl hover:shadow-gray-200/50 flex flex-col justify-between"
+      >
+        <div className="relative z-10 max-w-lg">
+          <div className="bg-white border border-gray-200 w-14 h-14 rounded-2xl flex items-center justify-center mb-8 shadow-sm group-hover:scale-110 transition-transform duration-500 group-hover:border-black">
+            <span className="text-2xl">⚡</span>
+          </div>
+          <h3 className="text-2xl font-extrabold text-black mb-3 tracking-tight">
+            Quanta Indexer
+          </h3>
+          <p className="text-gray-500 font-medium leading-relaxed">
+            High-throughput Rust daemon for real-time indexing of Quanta blockchain data into MongoDB, powering the QuaScan Block Explorer.
+          </p>
+        </div>
+
+        <div className="mt-8 relative z-10 flex justify-between items-center max-w-lg">
+            <span className="text-[10px] bg-white border border-gray-200 px-3 py-1 rounded-full font-black uppercase tracking-[0.1em] text-gray-500 group-hover:border-black group-hover:text-black transition-colors">
+              GitHub
+            </span>
+             <div className="bg-white border border-gray-200 rounded-full p-2.5 group-hover:bg-black group-hover:border-black transition-colors shadow-sm">
+                <ArrowUpRight className="w-4 h-4 text-black group-hover:text-white transition-colors" />
+             </div>
+        </div>
+      </a>
+
     </div>
   );
 }

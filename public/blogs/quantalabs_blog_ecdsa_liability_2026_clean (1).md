@@ -177,7 +177,7 @@ This benchmark suite runs against the same node binary. These numbers are not si
 - If you are building a new chain or significant protocol upgrade, do not build on ECDSA. The engineering cost of migrating later — coordinating a hard fork, building parallel signing schemes, migrating wallet key material — will be an order of magnitude larger than building on Falcon-512 from genesis.
 - Implement crypto agility in your signing layer. Even if you stay on ECDSA today, your codebase should be structured so the signing scheme is swappable without a full protocol rewrite.
 
-**If you want help:** QuantaLabs offers cryptographic readiness audits and Falcon-512 / Kyber-1024 migration engineering. We have done this on a production network. Reach us at [enterprise@quantalabs.cc](mailto:enterprise@quantalabs.cc).
+**If you want help:** QuantaLabs offers cryptographic readiness audits and Falcon-512 / Kyber-1024 migration engineering. We have done this on a production network. Reach us at [contact@quantalabs.cc](mailto:contact@quantalabs.cc).
 
 ---
 
@@ -199,7 +199,7 @@ The migration window is open. Build accordingly.
 - [quantachain.org](https://quantachain.org)
 - [scan.quantachain.org](https://scan.quantachain.org)
 - [Research: Zenodo 10.5281/zenodo.18753528](https://doi.org/10.5281/zenodo.18753528)
-- [enterprise@quantalabs.cc](mailto:enterprise@quantalabs.cc)
+- [contact@quantalabs.cc](mailto:contact@quantalabs.cc)
 
 ---
 

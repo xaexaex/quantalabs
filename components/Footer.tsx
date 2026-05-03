@@ -56,6 +56,8 @@ const footerColumns = [
       { label: "Quantachain", href: "https://quantachain.org", badge: "Live", external: true },
       { label: "Block Explorer", href: "https://scan.quantachain.org", badge: "Live", external: true },
       { label: "Quanta Wallet", href: "https://chrome.google.com/webstore/detail/glofbcgdmodmaohealombcgoapdbdaff", badge: "Live", external: true },
+      { label: "Mining Pool", href: "https://github.com/quantachain/quanta-pool", badge: "Live", external: true },
+      { label: "Data Indexer", href: "https://github.com/quantachain/quanta-indexer", badge: "Live", external: true },
       { label: "NPM SDK", href: "https://www.npmjs.com/package/quanta-sdk", badge: "Live", external: true },
       { label: "WASM Engine", href: "https://crates.io/crates/quanta-wasm", badge: "Live", external: true },
       { label: "Mobile Wallet", href: "https://github.com/quantachain/quanta-mobile-wallet", badge: "Building", external: true },
@@ -174,11 +176,10 @@ export default function Footer() {
                         {link.label}
                       </Link>
                       {link.badge && (
-                        <span className={`text-[10px] font-black px-1.5 py-0.5 rounded-full leading-none ${
-                          link.badge === "Hiring"
+                        <span className={`text-[10px] font-black px-1.5 py-0.5 rounded-full leading-none ${link.badge === "Hiring"
                             ? "bg-blue-50 text-blue-600 border border-blue-100"
                             : "bg-green-50 text-green-700 border border-green-100"
-                        }`}>
+                          }`}>
                           {link.badge}
                         </span>
                       )}
@@ -202,8 +203,8 @@ export default function Footer() {
             <Link href="#" className="hover:text-black transition-colors">Privacy Policy</Link>
             <Link href="#" className="hover:text-black transition-colors">Terms of Service</Link>
             <Link href="/contact" className="hover:text-black transition-colors">Contact</Link>
-            <a href="mailto:enterprise@quantalabs.cc" className="hover:text-black transition-colors">
-              enterprise@quantalabs.cc
+            <a href="mailto:contact@quantalabs.cc" className="hover:text-black transition-colors">
+              contact@quantalabs.cc
             </a>
           </div>
         </div>
